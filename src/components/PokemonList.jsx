@@ -14,11 +14,11 @@ const Grid = styled.div`
   gap: 20px;
 `;
 
-export default function PokemonList({ onAdd }) {
+export default function PokemonList() {
   return (
     <Grid>
       {MOCK_DATA.map((p) => (
-        <PokemonCard key={p.id} pokemon={p} onAdd={onAdd} />
+        <PokemonCard key={p.id} pokemon={p} />
       ))}
     </Grid>
   );

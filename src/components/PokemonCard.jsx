@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import { useNavigate } from "react-router-dom";
+import { usePokemonContext } from "../context/PokemonContext";
 
 const Card = styled.div`
   border: 1px solid #ddd;
@@ -19,8 +20,9 @@ const Button = styled.button`
   padding: 0.5rem 1rem;
 `;
 
-export default function PokemonCard({ pokemon, onAdd }) {
+export default function PokemonCard({ pokemon }) {
   const navigate = useNavigate();
+  const { handleAdd } = usePokemonContext();
 
   return (
     <Card onClick={() => navigate(`/detail?id=${pokemon.id}`)}>
@@ -36,7 +38,7 @@ export default function PokemonCard({ pokemon, onAdd }) {
       <Button
         onClick={(e) => {
           e.stopPropagation();
-          onAdd(pokemon);
+          handleAdd(pokemon);
         }}>
         추가
       </Button>

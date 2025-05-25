@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import { useNavigate } from "react-router-dom";
 import pokeballImg from "../assets/pokeball.png";
+import { usePokemonContext } from "../context/PokemonContext";
 
 const Container = styled.div`
   background: #f2f2f2;
@@ -52,39 +53,35 @@ const Image = styled.img`
   height: 50px;
 `;
 
-export default function Dashboard({ pokemons, onRemove }) {
+export default function Dashboard() {
   const navigate = useNavigate();
+  const { selected, handleRemove } = usePokemonContext();
 
-  const filledPokemons = [...pokemons];
+  const filledPokemons = [...selected];
   while (filledPokemons.length < 6) {
     filledPokemons.push(null);
   }
 
-  const handleCardClick = (id) => {
-    navigate(`/detail?id=${id}`);
-  };
-
-  const handleRemoveClick = (e, id) => {
-    e.stopPropagation();
-    onRemove(id);
-  };
-
   return (
     <Container>
-      <h2>나만의 포켓몬 ({pokemons.length} / 6)</h2>
+      <h2>나만의 포켓몬 ({selected.length} / 6)</h2>
       <Grid>
         {filledPokemons.map((p, index) => (
           <Card
             key={index}
             onClick={() => {
-              if (p) handleCardClick(p.id);
+              navigate(`/detail?id=${p.id}`);
             }}>
             {p ? (
               <>
                 <img src={p.img_url} alt={p.korean_name} />
                 <NameText>{p.korean_name}</NameText>
                 <NumberText>No. {String(p.id).padStart(3, "0")}</NumberText>
-                <button onClick={(e) => handleRemoveClick(e, p.id)}>
+                <button
+                  onClick={(e) => {
+                    e.stopPropagation();
+                    handleRemove(p.id);
+                  }}>
                   삭제
                 </button>
               </>
