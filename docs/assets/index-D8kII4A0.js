@@ -167,4 +167,4 @@ Please change the parent <Route path="${q}"> to <Route path="${q==="/"?"*":`${q}
     margin: 0 auto;
     text-align: center;
   }
-`;function Hv(){return at.jsxs(at.Fragment,{children:[at.jsx(Nv,{})," ",at.jsx(t1,{children:at.jsxs(D0,{children:[at.jsx(Mi,{path:"/",element:at.jsx(hv,{})}),at.jsx(Mi,{path:"/dex",element:at.jsx(Mv,{})}),at.jsx(Mi,{path:"/detail",element:at.jsx(Uv,{})})]})})]})}jy.createRoot(document.getElementById("root")).render(at.jsx(C.StrictMode,{children:at.jsx(yv,{children:at.jsx(Hv,{})})}));
+`;function Hv(){return at.jsxs(at.Fragment,{children:[at.jsx(Nv,{})," ",at.jsxs(D0,{children:[at.jsx(Mi,{path:"/",element:at.jsx(hv,{})}),at.jsx(Mi,{path:"/dex",element:at.jsx(Mv,{})}),at.jsx(Mi,{path:"/detail",element:at.jsx(Uv,{})})]})]})}jy.createRoot(document.getElementById("root")).render(at.jsx(C.StrictMode,{children:at.jsx(yv,{children:at.jsx(t1,{basename:"/kakao-pokemon-dex",children:at.jsx(Hv,{})})})}));
