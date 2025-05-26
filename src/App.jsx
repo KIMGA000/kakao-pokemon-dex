@@ -3,7 +3,6 @@ import Home from "./pages/Home";
 import Dex from "./pages/Dex";
 import Detail from "./pages/Detail";
 import GlobalStyle from "./styles/GlobalStyle";
-import { PokemonProvider } from "./context/PokemonContext";
 
 function App() {
   return (
