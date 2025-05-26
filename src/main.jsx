@@ -8,7 +8,7 @@ import { PokemonProvider } from "./context/PokemonContext";
 createRoot(document.getElementById("root")).render(
   <StrictMode>
     <PokemonProvider>
-      <BrowserRouter basename="/kakao-pokemon-dex">
+      <BrowserRouter>
         <App />
       </BrowserRouter>
     </PokemonProvider>
